@@ -86,6 +86,13 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.ext.compiler)
+    implementation(libs.hilt.navigator)
+
+    implementation(libs.google.gson)
+
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    kapt(libs.room.compiler)
 
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.core)
