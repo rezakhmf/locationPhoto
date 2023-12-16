@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Bank Transactions</string>
     <string name="connection_error_title">Connection error</string>
-    <string name="connection_error_message">Unable to fetch podcasts feeds. Check your internet con..</string>
+    <string name="connection_error_message">Unable to fetch data. Check your internet con..</string>
     <string name="retry_label">Retry</string>
+
+    <string name="general_error_txt">Oops!..Something went wrong.</string>
+    <string name="error_icon_content">Error icon</string>
 </resources>

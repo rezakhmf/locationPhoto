@@ -1,11 +1,14 @@
 package com.farahaniconsulting.locationphoto.data.model.dto.location
 
 import com.google.gson.Gson
+import com.google.gson.annotations.SerializedName
 
 data class Location(
     val id: Int,
     val name: String,
+    @SerializedName("lat")
     val latitude: Double,
+    @SerializedName("lng")
     val longitude: Double,
     var notes: String = ""
 )

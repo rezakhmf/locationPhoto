@@ -7,7 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.farahaniconsulting.locationphoto.ui.map.MapScreen
+import com.farahaniconsulting.locationphoto.ui.components.MapScreen
+import com.farahaniconsulting.locationphoto.ui.locationPhoto.LocationPhotoScreen
 
 @Composable
 fun PhotoLocationApp (
@@ -18,7 +19,7 @@ fun PhotoLocationApp (
             navController = appState.navController,
             startDestination = Screen.Home.route) {
             composable(Screen.Home.route) { navBackStackEntry ->
-                MapScreen()
+                LocationPhotoScreen()
             }
         }
     } else {
