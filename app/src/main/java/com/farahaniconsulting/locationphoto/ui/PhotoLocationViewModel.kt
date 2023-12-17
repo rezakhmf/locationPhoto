@@ -47,4 +47,20 @@ class PhotoLocationViewModel  @Inject constructor(
             is ResultData.DoNothing -> {}
         }
     }
+
+    fun addLocation(location: Location) {
+       viewModelScope.launch {
+           useCase.saveLocation(location)
+           fetchLocations()
+       }
+    }
+
+
+    fun editLocation(newLocation: Location) {
+        viewModelScope.launch {
+            useCase.updateLocation(newLocation)
+            fetchLocations()
+        }
+
+    }
 }

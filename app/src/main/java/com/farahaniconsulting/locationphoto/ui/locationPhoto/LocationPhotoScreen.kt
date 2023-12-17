@@ -30,11 +30,9 @@ fun LocationPhotoScreen(
     navController: NavHostController = rememberNavController(),
     viewModel: PhotoLocationViewModel = hiltViewModel()
 ) {
-    val uiState: UIState<List<Location>> by viewModel.photoLocationState.collectAsStateWithLifecycle()
-
     LocationPhotoContent(
         navController = navController,
-        uiState = uiState
+        viewModel = viewModel
     )
 
 }
@@ -42,9 +40,11 @@ fun LocationPhotoScreen(
 @Composable
 fun LocationPhotoContent(
     modifier: Modifier = Modifier,
-    uiState: UIState<List<Location>>,
+    viewModel: PhotoLocationViewModel,
     navController: NavHostController,
 ) {
+    val uiState: UIState<List<Location>> by viewModel.photoLocationState.collectAsStateWithLifecycle()
+
     if (uiState.isLoading) {
         ShowLoading(
             modifier = Modifier
@@ -69,7 +69,9 @@ fun LocationPhotoContent(
                         .weight(1f)
                         .fillMaxWidth()
                 ) {
-                    ListScreen(locations = locations)
+                    ListScreen(locations = locations) { editedLocation ->
+                        viewModel.editLocation(editedLocation)
+                    }
                 }
                 Box(
                     modifier = Modifier

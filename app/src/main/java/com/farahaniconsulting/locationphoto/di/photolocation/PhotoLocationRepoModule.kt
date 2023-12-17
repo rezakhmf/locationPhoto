@@ -1,6 +1,7 @@
 package com.farahaniconsulting.locationphoto.di.photolocation
 
 import android.content.Context
+import com.farahaniconsulting.locationphoto.data.local.dao.ControlDao
 import com.farahaniconsulting.locationphoto.data.local.dao.PhotoLocationDao
 import com.farahaniconsulting.locationphoto.data.model.repository.LocationPhotoRepository
 import com.farahaniconsulting.locationphoto.data.model.repository.LocationPhotoRepositoryImp
@@ -17,8 +18,11 @@ object PhotoLocationRepoModule {
 
     @Provides
     fun providePhotoLocationRepository(
-    photoLocationDao: PhotoLocationDao
+    photoLocationDao: PhotoLocationDao,
+    controlDao: ControlDao
     ) : LocationPhotoRepository {
-     return  LocationPhotoRepositoryImp(photoLocationDao)
+     return  LocationPhotoRepositoryImp(
+         photoLocationDao,
+         controlDao)
     }
 }

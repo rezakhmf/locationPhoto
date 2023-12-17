@@ -4,7 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 
 data class Location(
-    val id: Int,
+    val id: Long,
     val name: String,
     @SerializedName("lat")
     val latitude: Double,
@@ -21,7 +21,11 @@ data class LocationsData(
 fun provideLocationData() = parseJsonToLocationsData(jsonLocationData)
 private fun parseJsonToLocationsData(jsonData: String): LocationsData {
     val gson = Gson()
-    return gson.fromJson(jsonData, LocationsData::class.java)
+    val result = gson.fromJson(jsonData, LocationsData::class.java)
+    result.locations.map { location ->
+            location.notes = ""
+    }
+    return result
 }
 
 private const val jsonLocationData = """

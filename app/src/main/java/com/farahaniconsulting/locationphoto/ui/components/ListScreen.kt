@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -13,24 +14,32 @@ import com.farahaniconsulting.locationphoto.data.model.dto.location.Location
 @Composable
 fun ListScreen(
     locations : List<Location>,
-    //onLocationSelected: (Location) -> Unit
+    //onLocationSelected: (Location) -> Unit,
+    onEditLocation: (Location) -> Unit
 ) {
 
     LazyColumn {
         items(locations) { location ->
-            LocationItem(location = location)
+            LocationItem(
+                location = location,
+                onEditLocation = onEditLocation)
         }
     }
 }
 
 @Composable
-fun LocationItem(location: Location) {
+fun LocationItem(
+    location: Location,
+    onEditLocation: (Location) -> Unit) {
     Column(
         modifier = androidx.compose.ui.Modifier.padding(16.dp)
     ) {
         Text(text = "Name: ${location.name}")
         Text(text = "Latitude: ${location.latitude}")
         Text(text = "Longitude: ${location.longitude}")
+        Button(onClick = { onEditLocation(location) }) {
+            Text("Edit")
+        }
     }
 }
 

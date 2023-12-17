@@ -1,6 +1,7 @@
 package com.farahaniconsulting.locationphoto.domain
 
 import com.farahaniconsulting.locationphoto.data.model.dto.location.Location
+import com.farahaniconsulting.locationphoto.data.model.entity.asDomainModel
 import com.farahaniconsulting.locationphoto.data.model.repository.LocationPhotoRepository
 import com.farahaniconsulting.locationphoto.util.ResultData
 import javax.inject.Inject
@@ -9,26 +10,25 @@ class LocationPhotoUseCase @Inject constructor(
     private val locationPhotoRepository: LocationPhotoRepository
 ) {
     suspend fun getPhotoLocations(): ResultData<List<Location>?> {
-        locationPhotoRepository.getDefaultLocations()?.let { locations ->
+        //locationPhotoRepository.getDefaultLocations()?
+        locationPhotoRepository.getAllLocations().asDomainModel().let { locations ->
             return ResultData.Success(locations)
         }
-        return ResultData.DoNothing
     }
 
-    suspend fun saveLocation(name: String, latitude: Double, longitude: Double) {
+    suspend fun saveLocation(location: Location) {
         locationPhotoRepository.saveCustomLocation(
-            name = name,
-            latitude = latitude,
-            longitude = longitude
+            name = location.name,
+            latitude = location.latitude,
+            longitude = location.longitude
         )
     }
 
-    suspend fun updateLocation(id: Long, name: String, latitude: Double, longitude: Double) {
+    suspend fun updateLocation(location: Location) {
         locationPhotoRepository.updateLocation(
-            id = id,
-            name = name,
-            latitude = latitude,
-            longitude = longitude
+            name = location.name,
+            latitude = location.latitude,
+            longitude = location.longitude
         )
     }
 }
