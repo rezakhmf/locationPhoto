@@ -20,15 +20,18 @@ class LocationPhotoUseCase @Inject constructor(
         locationPhotoRepository.saveCustomLocation(
             name = location.name,
             latitude = location.latitude,
-            longitude = location.longitude
+            longitude = location.longitude,
+            notes = location.notes
         )
     }
 
     suspend fun updateLocation(location: Location) {
         locationPhotoRepository.updateLocation(
+            id = location.id,
             name = location.name,
             latitude = location.latitude,
-            longitude = location.longitude
+            longitude = location.longitude,
+            notes = location.notes
         )
     }
 }

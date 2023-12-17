@@ -6,4 +6,7 @@
 
     <string name="general_error_txt">Oops!..Something went wrong.</string>
     <string name="error_icon_content">Error icon</string>
+    <string name="add">Add</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
 </resources>

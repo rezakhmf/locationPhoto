@@ -15,13 +15,16 @@ interface LocationPhotoRepository {
     suspend fun saveCustomLocation(
         name: String,
         latitude: Double,
-        longitude: Double
+        longitude: Double,
+        notes: String
     )
 
     suspend fun updateLocation(
+        id: Long,
         name: String,
         latitude: Double,
-        longitude: Double
+        longitude: Double,
+        notes: String
     )
 
     suspend fun isDataInserted(): Boolean
@@ -39,6 +42,7 @@ class LocationPhotoRepositoryImp @Inject constructor(
             provideLocationData().locations.forEach { location ->
                 photoLocationDao.insertPhotoLocation(
                     PhotoLocationEntity(
+                        id = location.id,
                         name = location.name,
                         latitude = location.latitude,
                         longitude = location.longitude,
@@ -54,26 +58,33 @@ class LocationPhotoRepositoryImp @Inject constructor(
     override suspend fun saveCustomLocation(
         name: String,
         latitude: Double,
-        longitude: Double
+        longitude: Double,
+        notes: String
     ) {
         val customLocation = PhotoLocationEntity(
             name = name,
             latitude = latitude,
-            longitude = longitude
+            longitude = longitude,
+            notes = notes
         )
         photoLocationDao.insertPhotoLocation(customLocation)
     }
 
     override suspend fun updateLocation(
+        id: Long,
         name: String,
         latitude: Double,
-        longitude: Double
+        longitude: Double,
+        notes: String
     ) {
         val customLocation = PhotoLocationEntity(
+            id = id,
             name = name,
             latitude = latitude,
-            longitude = longitude
+            longitude = longitude,
+            notes = notes
         )
+
         photoLocationDao.updatePhotoLocation(customLocation)
     }
 
