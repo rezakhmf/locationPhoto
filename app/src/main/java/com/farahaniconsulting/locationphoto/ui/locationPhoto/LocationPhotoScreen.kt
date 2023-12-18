@@ -8,8 +8,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -98,42 +102,44 @@ fun LocationPhotoContent(
                     }
                 )
             }
-
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-            ) {
-
-                Box(
+            Scaffold { innerPadding ->
+                Column(
                     modifier = Modifier
-                        .weight(1f)
-                        .fillMaxWidth()
+                        .fillMaxSize()
+                        .padding(vertical = innerPadding.calculateTopPadding())
                 ) {
-                    ListScreen(locations = locations) { editedLocation ->
-                        selectedLocation = editedLocation
-                        isEditDialogVisible = true
-                    }
-                    FloatingActionButton(
-                        onClick = {
-                            isAddDialogVisible = true
-                        },
+
+                    Box(
                         modifier = Modifier
-                            .padding(16.dp)
-                            .align(Alignment.TopEnd)
+                            .weight(1f)
+                            .fillMaxWidth()
                     ) {
-                        Icon(imageVector = Icons.Default.Add, contentDescription = "Add Location")
+                        ListScreen(locations = locations) { editedLocation ->
+                            selectedLocation = editedLocation
+                            isEditDialogVisible = true
+                        }
+                        FloatingActionButton(
+                            onClick = {
+                                isAddDialogVisible = true
+                            },
+                            modifier = Modifier
+                                .padding(16.dp)
+                                .align(Alignment.TopEnd)
+                        ) {
+                            Icon(imageVector = Icons.Default.Add, contentDescription = "Add Location")
+                        }
                     }
-                }
 
-                Box(
-                    modifier = Modifier
-                        .weight(1f)
-                        .fillMaxWidth()
-                ) {
-                    MapScreen(locations = locations,
-                        onAddLocation = {}
-                        //TODO
-                    )
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .fillMaxWidth()
+                    ) {
+                        MapScreen(locations = locations,
+                            onAddLocation = {}
+                            //TODO
+                        )
+                    }
                 }
             }
         }
