@@ -6,7 +6,9 @@ I am Reza Farahani,
 
 Photo Locations Map
 
-[bank-transactions-final.webm](https://github.com/rezakhmf/BankTransactions/assets/3985692/7c228a74-6fcd-4991-898f-ffd1b315e657)
+
+<img src="https://github.com/rezakhmf/locationPhoto/assets/3985692/513d55e7-0ec5-49fa-b1a2-ee7f6fba2197" width="200" height="400" />
+
 
 
 ## Getting Started
