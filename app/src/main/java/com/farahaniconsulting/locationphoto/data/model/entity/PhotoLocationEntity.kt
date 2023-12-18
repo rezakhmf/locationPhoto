@@ -16,7 +16,7 @@ data class PhotoLocationEntity(
 
 fun List<PhotoLocationEntity>.asDomainModel(): List<Location> {
     return map {
-        Location(
+        Location (
             id = it.id,
             name = it.name,
             latitude = it.latitude,

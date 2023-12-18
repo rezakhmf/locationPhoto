@@ -45,7 +45,6 @@ fun LocationPhotoScreen(
         navController = navController,
         viewModel = viewModel
     )
-
 }
 
 @Composable
@@ -75,7 +74,7 @@ fun LocationPhotoContent(
                 .background(BackgroundGrey)
         )
     } else {
-        uiState.data?.let {locations ->
+        uiState.data?.let { locations ->
 
             AddLocationDialog(
                 isDialogVisible = isAddDialogVisible,
@@ -104,6 +103,7 @@ fun LocationPhotoContent(
                 modifier = Modifier
                     .fillMaxSize()
             ) {
+
                 Box(
                     modifier = Modifier
                         .weight(1f)
@@ -124,6 +124,7 @@ fun LocationPhotoContent(
                         Icon(imageVector = Icons.Default.Add, contentDescription = "Add Location")
                     }
                 }
+
                 Box(
                     modifier = Modifier
                         .weight(1f)
@@ -131,7 +132,7 @@ fun LocationPhotoContent(
                 ) {
                     MapScreen(locations = locations,
                         onAddLocation = {}
-                        //    onLocationSelected = ()
+                        //TODO
                     )
                 }
             }

@@ -3,7 +3,7 @@ package com.farahaniconsulting.locationphoto.data.model.dto.location
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 
-data class Location(
+data class Location (
     val id: Long,
     val name: String,
     @SerializedName("lat")
@@ -13,7 +13,7 @@ data class Location(
     var notes: String = ""
 )
 
-data class LocationsData(
+data class LocationsData (
     val locations: List<Location>,
     val updated: String
 )

@@ -59,6 +59,7 @@ configurations {
 
 dependencies {
 
+    testImplementation("junit:junit:4.12")
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom)
@@ -96,7 +97,10 @@ dependencies {
     implementation(libs.room.ktx)
     kapt(libs.room.compiler)
 
-    androidTestImplementation(libs.junit)
+    testImplementation(libs.junit)
+    testImplementation(libs.test.mockk)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.android)
     androidTestImplementation(libs.androidx.test.core)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.kotlinx.coroutines.test)
@@ -105,4 +109,5 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.compose.ui.test)
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+
 }
