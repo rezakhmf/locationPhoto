@@ -6,7 +6,9 @@ I am Reza Farahani,
 
 Photo Locations Map
 
-[bank-transactions-final.webm](https://github.com/rezakhmf/BankTransactions/assets/3985692/7c228a74-6fcd-4991-898f-ffd1b315e657)
+<img src = "https://github.com/rezakhmf/locationPhoto/assets/3985692/5b3dc333-5090-45ec-b8a3-e181ccafaefc" width="200" height="400" />
+
+
 
 
 ## Getting Started
@@ -18,6 +20,7 @@ This project stack is
 * Android JetckPack (https://developer.android.com/jetpack) -
   * Compose
   * ViewModel
+  * Room Database
   * Google Map SDK
 * [Kotlin](https://kotlinlang.org/) - Statically typed programming language(coroutine, flow)
 * [Coroutine](https://kotlinlang.org/docs/reference/coroutines-overview.html) - A library for composing asynchronous and event-based programs
