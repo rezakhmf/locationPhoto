@@ -6,8 +6,8 @@ I am Reza Farahani,
 
 Photo Locations Map
 
+<img src = "https://github.com/rezakhmf/locationPhoto/assets/3985692/5b3dc333-5090-45ec-b8a3-e181ccafaefc" width="200" height="400" />
 
-<img src="https://github.com/rezakhmf/locationPhoto/assets/3985692/513d55e7-0ec5-49fa-b1a2-ee7f6fba2197" width="200" height="400" />
 
 
 
@@ -20,6 +20,7 @@ This project stack is
 * Android JetckPack (https://developer.android.com/jetpack) -
   * Compose
   * ViewModel
+  * Room Database
   * Google Map SDK
 * [Kotlin](https://kotlinlang.org/) - Statically typed programming language(coroutine, flow)
 * [Coroutine](https://kotlinlang.org/docs/reference/coroutines-overview.html) - A library for composing asynchronous and event-based programs
