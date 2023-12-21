@@ -45,6 +45,7 @@ assumptions clearly.
 * When locations are selected on either the map or list screen, show a detail screen
 * In the detail screen, allow the user to enter notes about the location
 * All information entered by the user must be persisted between app launches
+* Locations JSON file: https://apps.cochlear.limited/tht/locations.json
 
 ### Not Included
  * Accepting wrong lat/long
