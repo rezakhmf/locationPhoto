@@ -19,7 +19,9 @@ fun ListScreen(
 ) {
 
     LazyColumn {
-        items(locations) { location ->
+        items(
+            items = locations,
+            key = { item -> item.id}) { location ->
             LocationItem(
                 location = location,
                 onEditLocation = onEditLocation
