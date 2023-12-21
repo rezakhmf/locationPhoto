@@ -2,7 +2,6 @@ package com.farahaniconsulting.locationphoto.domain
 
 import com.farahaniconsulting.locationphoto.data.model.dto.location.Location
 import com.farahaniconsulting.locationphoto.data.model.entity.asDomainModel
-import com.farahaniconsulting.locationphoto.data.model.repository.LocationPhotoRepository
 import com.farahaniconsulting.locationphoto.util.ResultData
 import javax.inject.Inject
 
