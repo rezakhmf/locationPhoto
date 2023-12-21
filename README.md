@@ -1,6 +1,6 @@
 # Photo Location Project
 
-I am Reza Farahani,
+I am Reza Farahani
 
 # Project Title
 
@@ -35,6 +35,12 @@ Product requirements
 * When locations are selected on either the map or list screen, show a detail screen
 * In the detail screen, allow the user to enter notes about the location
 * All information entered by the user must be persisted between app launches
+
+### Not Included
+ * Accepting wrong lat/long
+ * Sort by Distance
+ * Add Location based on the Map
+   
 ### Installing
 
 * It just needs to import to Android Studio Dolphin | 2021.3.1
